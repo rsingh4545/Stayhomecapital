@@ -1,345 +1,229 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>StayHome Capital — Mortgage Relief</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StayHome Capital</title>
 
-  <style>
-    :root{
-      --brand:#1d4ed8;
-      --bg:#0f172a;
-      --card:#ffffff;
-      --text:#0b1220;
-      --muted:#64748b;
-      --accent:#16a34a;
-      --warning:#f59e0b;
-      --shadow: 0 18px 50px rgba(15,23,42,0.08);
-      --radius:12px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(29,78,216,0.06), transparent 30%),
-        radial-gradient(circle at 80% 10%, rgba(16,185,129,0.03), transparent 30%),
-        var(--bg);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      min-height:100vh;
-      padding-bottom:40px;
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #fafafa;
+        color: #222;
     }
 
-    /* NAV */
-    .navbar{
-      position:sticky;
-      top:0;
-      z-index:120;
-      background:rgba(6,10,20,0.9);
-      backdrop-filter: blur(6px);
-      border-bottom:1px solid rgba(255,255,255,0.03);
+    header {
+        background: #ffffff;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 999;
     }
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    .navbar__inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#e6eef9;font-weight:700}
-    .brand .logo{height:36px;width:auto;display:block}
-    .nav-links{display:flex;gap:12px;align-items:center}
-    .nav-links a{color:#e6eef9;text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px}
-    .nav-links a:hover{background:rgba(255,255,255,0.04)}
 
-    /* Hero */
-    header{max-width:1100px;margin:20px auto;padding:28px 20px;color:#e6eef9}
-    .eyebrow{display:inline-block;padding:6px 12px;background:rgba(255,255,255,0.04);border-radius:999px;font-size:13px;margin-bottom:12px}
-    .hero-title{font-size:clamp(26px,4vw,34px);margin:6px 0 10px;line-height:1.05}
-    .hero-sub{max-width:760px;color:#cbd5e1;margin:0 0 18px;line-height:1.6}
-    .hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:8px}
-    .hero-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);padding:12px;border-radius:10px;color:#f8fafc}
-
-    /* Sections & forms */
-    main{padding:16px 20px 60px}
-    .section{max-width:760px;margin:28px auto;background:var(--card);border-radius:var(--radius);border:1px solid #e6eef5;box-shadow:var(--shadow);padding:28px}
-    .section h2{margin:0 0 8px;text-align:center}
-    .section p{margin:0 0 18px;text-align:center;color:var(--muted)}
-    form{display:flex;flex-direction:column;gap:12px}
-    label{font-weight:700;color:var(--text);font-size:14px}
-    input,select,textarea{
-      padding:12px;border-radius:10px;border:1px solid #dbe8fb;font-size:15px;background:#fff;color:var(--text);font-family:inherit;
+    header img {
+        height: 55px;
     }
-    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 4px rgba(29,78,216,0.08)}
-    .btn{padding:12px 14px;border-radius:10px;border:none;color:#fff;font-weight:800;cursor:pointer;font-size:15px;box-shadow:0 10px 30px rgba(0,0,0,0.08)}
-    .btn-primary{background:var(--brand)}
-    .btn-accent{background:var(--accent)}
-    .btn-warning{background:var(--warning)}
-    .hint{text-align:center;color:var(--muted);font-size:14px;margin-top:8px}
+
+    nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #222;
+        font-weight: 600;
+    }
+
+    .section {
+        max-width: 1000px;
+        margin: auto;
+        padding: 60px 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 18px;
+        max-width: 800px;
+        margin: 10px auto 30px auto;
+        line-height: 1.6;
+    }
+
+    /* FORM DESIGN */
+    form {
+        background: #fff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        max-width: 600px;
+        margin: auto;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0 18px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    button {
+        background: #1a73e8;
+        color: white;
+        padding: 14px;
+        border: none;
+        border-radius: 6px;
+        font-size: 18px;
+        width: 100%;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background: #0f5fcc;
+    }
 
     /* FAQ */
-    .faq{max-width:760px;margin:28px auto;padding:0 20px}
-    .faq-item{background:rgba(255,255,255,0.02);border-radius:12px;margin-bottom:10px;border:1px solid rgba(0,0,0,0.04);overflow:hidden}
-    .faq-q{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;cursor:pointer}
-    .faq-q h3{margin:0;font-size:15px;color:#e6eef9}
-    .faq-a{padding:14px 16px 18px;color:#cbd5e1;line-height:1.6;border-top:1px solid rgba(255,255,255,0.02);display:none}
-
-    /* footer */
-    footer{max-width:1100px;margin:20px auto;color:#9ca3af;text-align:center;padding:18px 20px}
-
-    @media (max-width:640px){
-      .container{padding:0 14px}
-      .navbar__inner{gap:8px}
-      .brand .logo{height:28px}
-      header{padding:18px 14px}
-      .section{padding:20px}
+    details {
+        margin: 10px 0;
+        background: white;
+        padding: 15px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
     }
-  </style>
+
+    details summary {
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    footer {
+        background: #111;
+        color: #fff;
+        padding: 40px;
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
 </head>
+
 <body>
-  <!-- NAV -->
-  <nav class="navbar" aria-label="Main navigation">
-    <div class="container navbar__inner">
-      <a class="brand" href="#top">
-        <img src="logo.png" alt="StayHome Capital logo" class="logo" />
-        <span>StayHome Capital</span>
-      </a>
 
-      <div class="nav-links" role="navigation" aria-label="Jump to forms">
-        <a href="#homeowner-form">Homeowner Apply</a>
-        <a href="#investor-form">Investor</a>
-        <a href="#broker-form">Broker</a>
-      </div>
-    </div>
-  </nav>
+<header>
+    <img src="logo.png" alt="StayHome Capital Logo" />
+    <nav>
+        <a href="#homeowner">Homeowner Relief</a>
+        <a href="#investor">Investors</a>
+        <a href="#broker">Brokers</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+</header>
 
-  <!-- HERO -->
-  <header id="top" class="container">
-    <div class="eyebrow">Canada’s home-rescue equity partner</div>
-    <h1 class="hero-title">Mortgage relief, home protection, and steady investor opportunities.</h1>
-    <p class="hero-sub">StayHome Capital helps homeowners avoid foreclosure, connects investors with resilient returns, and partners with mortgage brokers to solve urgent payment challenges.</p>
-    <div class="hero-grid">
-      <div class="hero-card">🏠 Tailored support for past-due mortgages and lender workouts</div>
-      <div class="hero-card">📈 Investor allocations with fixed returns or shared appreciation</div>
-      <div class="hero-card">🤝 Clear handoffs for brokers and mortgage professionals</div>
-    </div>
-    <p class="hint">Prefer email? <a href="mailto:stayhomecapital.info@gmail.com">stayhomecapital.info@gmail.com</a></p>
-  </header>
+<!-- HERO SECTION -->
+<div class="section" id="hero">
+    <h2>Canada’s Most Trusted Mortgage Relief Partner</h2>
+    <p>Real help. Real solutions. Real protection — without loans, credit checks, or losing ownership.</p>
+</div>
 
-  <!-- FORMS -->
-  <main>
-    <!-- Homeowner -->
-    <section id="homeowner-form" class="section" aria-labelledby="homeowner-title">
-      <h2 id="homeowner-title">Homeowner Application</h2>
-      <p>Apply to see if you qualify for temporary mortgage payment support. Minimal documents — fast response.</p>
+<!-- HOW WE RESCUE HOMES -->
+<div class="section" id="rescue">
+    <h2>How We Rescue Homes</h2>
+    <p>StayHome Capital provides a safe, transparent, and debt-free mortgage relief strategy designed to protect your home and your future.</p>
 
-      <form action="https://formspree.io/f/xanrjvoa" method="POST" novalidate>
-        <!-- Redirect to your thank you page after submission -->
-        <input type="hidden" name="_redirect" value="https://stayhomecapital.com/thankyou.html" />
-        <label for="h-name">Full Name</label>
-        <input id="h-name" name="name" type="text" required />
+    <h3>✔ Application Ready</h3>
+    <p>Lightning-fast online form. Get pre-approved faster than your coffee gets cold.</p>
 
-        <label for="h-email">Email Address</label>
-        <input id="h-email" name="email" type="email" required />
+    <h3>✔ Bank Direct Payments</h3>
+    <p>We send payments directly to your bank. No middlemen. No risk. Full transparency.</p>
 
-        <label for="h-phone">Phone Number</label>
-        <input id="h-phone" name="phone" type="text" required />
+    <h3>✔ Total Security</h3>
+    <p>Your home stays yours — always. We protect your ownership and equity.</p>
+</div>
 
-        <label for="h-address">Property Address</label>
-        <input id="h-address" name="address" type="text" required />
+<!-- HOMEOWNER FORM -->
+<div class="section" id="homeowner">
+    <h2>Homeowner Mortgage Relief Form</h2>
 
-        <label for="h-lender">Current Mortgage Lender</label>
-        <input id="h-lender" name="lender" type="text" />
+    <form action="https://formspree.io/f/xanrjvoa" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="phone" placeholder="Phone Number" required />
+        <input type="text" name="address" placeholder="Property Address" required />
+        <textarea name="situation" placeholder="Explain your mortgage situation" required></textarea>
+        <button type="submit">Submit Homeowner Form</button>
+    </form>
+</div>
 
-        <label for="h-payment">Monthly Mortgage Payment</label>
-        <input id="h-payment" name="payment" type="text" />
+<!-- INVESTOR FORM -->
+<div class="section" id="investor">
+    <h2>Investor Inquiry Form</h2>
 
-        <label for="h-arrears">How many months behind?</label>
-        <input id="h-arrears" name="arrears" type="text" />
+    <form action="https://formspree.io/f/mjknrlwa" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="phone" placeholder="Phone Number" required />
+        <textarea name="message" placeholder="What type of investment are you interested in?" required></textarea>
+        <button type="submit">Submit Investor Form</button>
+    </form>
+</div>
 
-        <label for="h-reason">Reason for Assistance</label>
-        <textarea id="h-reason" name="reason" rows="4"></textarea>
+<!-- BROKER FORM -->
+<div class="section" id="broker">
+    <h2>Broker Partnership Form</h2>
 
-        <button class="btn btn-primary" type="submit">Submit Application</button>
-      </form>
-    </section>
+    <form action="https://formspree.io/f/mvgvonbj" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="text" name="phone" placeholder="Phone Number" required />
+        <textarea name="message" placeholder="How can we partner together?" required></textarea>
+        <button type="submit">Submit Broker Form</button>
+    </form>
+</div>
 
-    <!-- Investor -->
-    <section id="investor-form" class="section" aria-labelledby="investor-title">
-      <h2 id="investor-title">Investor Inquiry</h2>
-      <p>Explore investor opportunities in responsible mortgage-relief allocations. Transparent, lien-backed, and secured by property equity.</p>
+<!-- FAQ SECTION -->
+<div class="section" id="faq">
+    <h2>Frequently Asked Mortgage Relief Questions</h2>
 
-      <form action="https://formspree.io/f/mjknrlwa" method="POST" novalidate>
-        <input type="hidden" name="_redirect" value="https://stayhomecapital.com/thankyou.html" />
-        <label for="i-name">Full Name</label>
-        <input id="i-name" name="name" type="text" required />
+    <details>
+        <summary>Do I lose ownership of my home?</summary>
+        <p>No. You keep 100% ownership. We only provide financial support.</p>
+    </details>
 
-        <label for="i-email">Email Address</label>
-        <input id="i-email" name="email" type="email" required />
+    <details>
+        <summary>Is this a loan?</summary>
+        <p>No. There is zero debt added to your credit report.</p>
+    </details>
 
-        <label for="i-phone">Phone Number (optional)</label>
-        <input id="i-phone" name="phone" type="text" />
+    <details>
+        <summary>Do you check credit?</summary>
+        <p>No credit score required. Everyone is considered.</p>
+    </details>
 
-        <label for="i-range">Investment Range</label>
-        <select id="i-range" name="investment_range">
-          <option value="10-25k">$10,000 – $25,000</option>
-          <option value="25-50k">$25,000 – $50,000</option>
-          <option value="50-100k">$50,000 – $100,000</option>
-          <option value="100k+">$100,000+</option>
-        </select>
+    <details>
+        <summary>How fast is the approval?</summary>
+        <p>Most homeowners receive an initial decision within 24 hours.</p>
+    </details>
+</div>
 
-        <label for="i-return">Preferred Return Type</label>
-        <select id="i-return" name="return_type">
-          <option value="fixed">8–12% Fixed Annual Return</option>
-          <option value="equity">Home Appreciation Share</option>
-          <option value="not_sure">Not sure yet</option>
-        </select>
+<!-- CTA SECTION -->
+<div class="section">
+    <h2>Reclaim Your Home's Future Today</h2>
+    <p>Apply now and get real mortgage relief backed by transparency, protection, and trust.</p>
+    <a href="#homeowner"><button>Start Application</button></a>
+</div>
 
-        <label for="i-notes">Anything else we should know?</label>
-        <textarea id="i-notes" name="notes" rows="4"></textarea>
+<footer>
+    <p>© 2025 StayHome Capital — Ontario, Canada</p>
+</footer>
 
-        <button class="btn btn-accent" type="submit">Join Investor Waitlist</button>
-      </form>
-    </section>
-
-    <!-- Broker -->
-    <section id="broker-form" class="section" aria-labelledby="broker-title">
-      <h2 id="broker-title">Broker Partnership Form</h2>
-      <p>Refer clients and partner with StayHome Capital to resolve urgent mortgage challenges with speed and legal clarity.</p>
-
-      <form action="https://formspree.io/f/mvgvonbj" method="POST" novalidate>
-        <input type="hidden" name="_redirect" value="https://stayhomecapital.com/thankyou.html" />
-        <label for="b-name">Broker Name</label>
-        <input id="b-name" name="name" type="text" required />
-
-        <label for="b-brokerage">Brokerage Name</label>
-        <input id="b-brokerage" name="brokerage" type="text" />
-
-        <label for="b-email">Email Address</label>
-        <input id="b-email" name="email" type="email" required />
-
-        <label for="b-phone">Phone Number</label>
-        <input id="b-phone" name="phone" type="text" />
-
-        <label for="b-details">Client Situation (short summary)</label>
-        <textarea id="b-details" name="client_details" rows="4"></textarea>
-
-        <button class="btn btn-warning" type="submit">Submit Referral</button>
-      </form>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" aria-labelledby="faq-title">
-      <h2 id="faq-title" style="text-align:center;color:#e6eef9;margin-bottom:12px">Frequently Asked Questions</h2>
-
-      <div class="faq-item" data-open="false">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
-          <h3>Does this program affect my homeownership?</h3>
-          <div aria-hidden="true">+</div>
-        </div>
-        <div class="faq-a">
-          <p>No. You remain the sole owner of your property. Our program is designed so you keep ownership while we provide temporary mortgage relief and protections to prevent foreclosure.</p>
-        </div>
-      </div>
-
-      <div class="faq-item" data-open="false">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
-          <h3>Is this a loan or refinance?</h3>
-          <div aria-hidden="true">+</div>
-        </div>
-        <div class="faq-a">
-          <p>This is not a traditional loan, refinance, or second mortgage. It is a mortgage-relief program with structured repayment events (sale, refinance, or agreed exit) — not a new typical credit product.</p>
-        </div>
-      </div>
-
-      <div class="faq-item" data-open="false">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
-          <h3>Who qualifies for the program?</h3>
-          <div aria-hidden="true">+</div>
-        </div>
-        <div class="faq-a">
-          <p>Homeowners experiencing temporary hardship — job loss, medical emergencies, income gaps, or unexpected expenses — are typically eligible. Each case is reviewed individually.</p>
-        </div>
-      </div>
-
-      <div class="faq-item" data-open="false">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
-          <h3>How long does the program last?</h3>
-          <div aria-hidden="true">+</div>
-        </div>
-        <div class="faq-a">
-          <p>Relief periods normally range from 6 to 24 months, depending on your situation and an agreed plan to exit (sale or refinance).</p>
-        </div>
-      </div>
-
-      <div class="faq-item" data-open="false">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
-          <h3>How fast can I be approved?</h3>
-          <div aria-hidden="true">+</div>
-        </div>
-        <div class="faq-a">
-          <p>Many applicants receive a preliminary response within 24–48 hours after submitting the online form. Full approvals require basic documentation and may take longer depending on complexity.</p>
-        </div>
-      </div>
-
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div>© <strong>StayHome Capital</strong> — Ontario, Canada</div>
-      <div style="margin-top:8px">Quick Links: <a style="color:#c7d2fe" href="#homeowner-form">Apply</a> · <a style="color:#c7d2fe" href="#faq-title">FAQ</a> · <a style="color:#c7d2fe" href="mailto:stayhomecapital.info@gmail.com">Contact</a></div>
-    </div>
-  </footer>
-
-  <script>
-    // Simple accessible FAQ accordion
-    (function () {
-      const items = document.querySelectorAll('.faq-item');
-      items.forEach(item => {
-        const q = item.querySelector('.faq-q');
-        const a = item.querySelector('.faq-a');
-        const icon = q.querySelector('div[aria-hidden="true"]');
-
-        function open() {
-          a.style.display = 'block';
-          q.setAttribute('aria-expanded', 'true');
-          item.dataset.open = 'true';
-          if (icon) icon.textContent = '−';
-        }
-        function close() {
-          a.style.display = 'none';
-          q.setAttribute('aria-expanded', 'false');
-          item.dataset.open = 'false';
-          if (icon) icon.textContent = '+';
-        }
-
-        // Init closed
-        close();
-
-        q.addEventListener('click', () => {
-          if (item.dataset.open === 'true') close();
-          else open();
-        });
-        q.addEventListener('keydown', (ev) => {
-          if (ev.key === 'Enter' || ev.key === ' ') {
-            ev.preventDefault();
-            q.click();
-          }
-        });
-      });
-    })();
-
-    // Optional: small guard to ensure forms have redirect input (helpful if someone edits)
-    (function () {
-      const forms = document.querySelectorAll('form[action^="https://formspree.io/"]');
-      forms.forEach(f => {
-        if (!f.querySelector('input[name="_redirect"]')) {
-          const inp = document.createElement('input');
-          inp.type = 'hidden';
-          inp.name = '_redirect';
-          inp.value = 'https://stayhomecapital.com/thankyou.html';
-          f.appendChild(inp);
-        }
-      });
-    })();
-  </script>
 </body>
 </html>
