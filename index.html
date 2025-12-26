@@ -1,229 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>StayHome Capital</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StayHome Capital – Mortgage Relief Without Loans</title>
+  <meta name="description" content="StayHome Capital provides 6–24 months of mortgage payment relief, paid directly to Canadian banks. No loans. No interest. No loss of ownership.">
 
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #fafafa;
-        color: #222;
-    }
-
-    header {
-        background: #ffffff;
-        padding: 15px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid #ddd;
-        position: sticky;
-        top: 0;
-        z-index: 999;
-    }
-
-    header img {
-        height: 55px;
-    }
-
-    nav a {
-        margin-left: 20px;
-        text-decoration: none;
-        color: #222;
-        font-weight: 600;
-    }
-
-    .section {
-        max-width: 1000px;
-        margin: auto;
-        padding: 60px 20px;
-    }
-
-    h2 {
-        font-size: 32px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    p {
-        text-align: center;
-        font-size: 18px;
-        max-width: 800px;
-        margin: 10px auto 30px auto;
-        line-height: 1.6;
-    }
-
-    /* FORM DESIGN */
-    form {
-        background: #fff;
-        padding: 25px;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        max-width: 600px;
-        margin: auto;
-    }
-
-    input, textarea, select {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0 18px 0;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        font-size: 16px;
-    }
-
-    button {
-        background: #1a73e8;
-        color: white;
-        padding: 14px;
-        border: none;
-        border-radius: 6px;
-        font-size: 18px;
-        width: 100%;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    button:hover {
-        background: #0f5fcc;
-    }
-
-    /* FAQ */
-    details {
-        margin: 10px 0;
-        background: white;
-        padding: 15px;
-        border-radius: 6px;
-        border: 1px solid #ddd;
-    }
-
-    details summary {
-        font-weight: bold;
-        cursor: pointer;
-        font-size: 18px;
-    }
-
-    footer {
-        background: #111;
-        color: #fff;
-        padding: 40px;
-        text-align: center;
-        margin-top: 50px;
-    }
-</style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
-    <img src="logo.png" alt="StayHome Capital Logo" />
-    <nav>
-        <a href="#homeowner">Homeowner Relief</a>
-        <a href="#investor">Investors</a>
-        <a href="#broker">Brokers</a>
-        <a href="#faq">FAQ</a>
-    </nav>
-</header>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h1>Canada’s Mortgage Relief Partner</h1>
+    <p class="hero-sub">
+      We cover <strong>6–24 months of mortgage payments</strong>, paid
+      <strong>directly to your bank</strong> — no loans, no interest,
+      no loss of ownership.
+    </p>
 
-<!-- HERO SECTION -->
-<div class="section" id="hero">
-    <h2>Canada’s Most Trusted Mortgage Relief Partner</h2>
-    <p>Real help. Real solutions. Real protection — without loans, credit checks, or losing ownership.</p>
-</div>
+    <div class="hero-buttons">
+      <a href="#homeowner" class="btn primary">Homeowner Application</a>
+      <a href="#investor" class="btn secondary">Investor Inquiry</a>
+    </div>
+  </section>
 
-<!-- HOW WE RESCUE HOMES -->
-<div class="section" id="rescue">
-    <h2>How We Rescue Homes</h2>
-    <p>StayHome Capital provides a safe, transparent, and debt-free mortgage relief strategy designed to protect your home and your future.</p>
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <h2>How We Protect Homes</h2>
+    <p class="section-intro">
+      StayHome Capital provides temporary mortgage payment relief for Canadian
+      homeowners facing short-term financial hardship.
+    </p>
 
-    <h3>✔ Application Ready</h3>
-    <p>Lightning-fast online form. Get pre-approved faster than your coffee gets cold.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>Simple Online Application</h3>
+        <p>
+          A short, secure eligibility form. No unnecessary paperwork.
+          No delays.
+        </p>
+      </div>
 
-    <h3>✔ Bank Direct Payments</h3>
-    <p>We send payments directly to your bank. No middlemen. No risk. Full transparency.</p>
+      <div class="feature">
+        <h3>Direct Bank Payments (6–24 Months)</h3>
+        <p>
+          We pay your mortgage <strong>directly to your lender</strong>
+          for 6 to 24 months. Funds never go to the homeowner.
+        </p>
+      </div>
 
-    <h3>✔ Total Security</h3>
-    <p>Your home stays yours — always. We protect your ownership and equity.</p>
-</div>
+      <div class="feature">
+        <h3>Ownership & Equity Protection</h3>
+        <p>
+          You remain the homeowner at all times. No monthly payments.
+          Repayment occurs only when you sell or refinance.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<!-- HOMEOWNER FORM -->
-<div class="section" id="homeowner">
-    <h2>Homeowner Mortgage Relief Form</h2>
+  <!-- WHO IT'S FOR -->
+  <section class="section light">
+    <h2>Who This Program Is For</h2>
+    <ul class="list">
+      <li>Homeowners facing temporary financial hardship</li>
+      <li>Those seeking to avoid foreclosure or forced sale</li>
+      <li>People who do not want high-interest loans</li>
+      <li>Homeowners with available equity</li>
+    </ul>
+  </section>
 
-    <form action="https://formspree.io/f/xanrjvoa" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="text" name="phone" placeholder="Phone Number" required />
-        <input type="text" name="address" placeholder="Property Address" required />
-        <textarea name="situation" placeholder="Explain your mortgage situation" required></textarea>
-        <button type="submit">Submit Homeowner Form</button>
-    </form>
-</div>
+  <!-- TRANSPARENCY -->
+  <section class="section">
+    <h2>Important Transparency</h2>
+    <ul class="list">
+      <li>We are not a bank</li>
+      <li>We are not a lender</li>
+      <li>We do not provide personal loans</li>
+      <li>We do not take ownership of your home</li>
+      <li>We register a legal lien to secure payments made</li>
+      <li>All terms are disclosed before approval</li>
+    </ul>
+  </section>
 
-<!-- INVESTOR FORM -->
-<div class="section" id="investor">
-    <h2>Investor Inquiry Form</h2>
+  <!-- HOMEOWNER FORM -->
+  <section class="section light" id="homeowner">
+    <h2>Homeowner Mortgage Relief Application</h2>
+    <p>Apply to see if you qualify for 6–24 months of mortgage payment support.</p>
 
-    <form action="https://formspree.io/f/mjknrlwa" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="text" name="phone" placeholder="Phone Number" required />
-        <textarea name="message" placeholder="What type of investment are you interested in?" required></textarea>
-        <button type="submit">Submit Investor Form</button>
-    </form>
-</div>
+    <a href="mailto:StayHomeCapital.info@gmail.com" class="btn primary">
+      Submit Homeowner Application
+    </a>
+  </section>
 
-<!-- BROKER FORM -->
-<div class="section" id="broker">
-    <h2>Broker Partnership Form</h2>
+  <!-- INVESTOR -->
+  <section class="section" id="investor">
+    <h2>Investor Inquiry</h2>
+    <p>
+      Investors participate by funding mortgage payments secured by
+      Canadian residential property equity.
+    </p>
 
-    <form action="https://formspree.io/f/mvgvonbj" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="text" name="phone" placeholder="Phone Number" required />
-        <textarea name="message" placeholder="How can we partner together?" required></textarea>
-        <button type="submit">Submit Broker Form</button>
-    </form>
-</div>
+    <ul class="list">
+      <li>Funds paid directly to Canadian banks</li>
+      <li>Secured by registered property liens</li>
+      <li>Returns via appreciation share or fixed return</li>
+    </ul>
 
-<!-- FAQ SECTION -->
-<div class="section" id="faq">
-    <h2>Frequently Asked Mortgage Relief Questions</h2>
+    <a href="mailto:StayHomeCapital.info@gmail.com" class="btn secondary">
+      Investor Inquiry Form
+    </a>
+  </section>
 
-    <details>
-        <summary>Do I lose ownership of my home?</summary>
-        <p>No. You keep 100% ownership. We only provide financial support.</p>
-    </details>
-
-    <details>
-        <summary>Is this a loan?</summary>
-        <p>No. There is zero debt added to your credit report.</p>
-    </details>
-
-    <details>
-        <summary>Do you check credit?</summary>
-        <p>No credit score required. Everyone is considered.</p>
-    </details>
-
-    <details>
-        <summary>How fast is the approval?</summary>
-        <p>Most homeowners receive an initial decision within 24 hours.</p>
-    </details>
-</div>
-
-<!-- CTA SECTION -->
-<div class="section">
-    <h2>Reclaim Your Home's Future Today</h2>
-    <p>Apply now and get real mortgage relief backed by transparency, protection, and trust.</p>
-    <a href="#homeowner"><button>Start Application</button></a>
-</div>
-
-<footer>
-    <p>© 2025 StayHome Capital — Ontario, Canada</p>
-</footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 StayHome Capital. All rights reserved.</p>
+    <p class="disclaimer">
+      StayHome Capital does not provide loans or financial advice.
+      Programs subject to eligibility and legal agreements.
+    </p>
+  </footer>
 
 </body>
 </html>
